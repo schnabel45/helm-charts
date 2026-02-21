@@ -10,6 +10,13 @@ jobs:
   index:
     runs-on: ubuntu-latest
     steps:
+      - name: Configure Git
+        run: |
+          git config --global user.name "$GITHUB_ACTOR"
+          git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
+        env:
+          GITHUB_TOKEN: ${{ secrets.CENTRAL_PAT }}
+
       - name: Checkout gh-pages
         uses: actions/checkout@v4
         with:
@@ -26,8 +33,6 @@ jobs:
 
       - name: Commit and Push Updated Index
         run: |
-          git config --global user.email "github-actions@github.com"
-          git config --global user.name "GitHub Actions"
           git add index.yaml
           git commit -m "chore: update index.yaml" || echo "No index change"
           git push
