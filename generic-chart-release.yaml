@@ -82,23 +82,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # - name: Create GitHub Release
-      #   uses: softprops/action-gh-release@v2
-      #   with:
-      #     tag_name: ${{ steps.get-version.outputs.tag }}
-      #     name: Release ${{ env.CHART_NAME }}-${{ steps.get-version.outputs.tag }}
-      #     body: |
-      #       Helm chart release for ${{ env.CHART_NAME }} version ${{ steps.get-version.outputs.version }}.
-            
-      #       - Auto-generated from Chart.yaml
-      #       - See commit history for changes
-      #     draft: false
-      #     prerelease: false
-      #     generate_release_notes: true   # Optional: auto-add release notes from commits
-      #     fail_on_unmatched_files: true
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
-
       - name: Package the Helm chart
         uses: azure/setup-helm@v4
 
@@ -150,13 +133,6 @@ jobs:
           ls -l *.tgz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # - name: Download chart from GitHub Release
-      #   run: |
-      #     TAG=${{ needs.release.outputs.release_tag }}
-      #     gh release download $TAG --pattern "*.tgz"
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
 
       - name: Checkout central repo's gh-pages branch
         uses: actions/checkout@v4
