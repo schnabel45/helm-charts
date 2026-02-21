@@ -1,0 +1,49 @@
+name: Publish to central Helm repo
+
+# Uncomment this trigger.
+# Ensure the "CENTRAL_PAT" secret exists in the project.
+# on:
+#   push:
+#     branches: [main]          # or: tags: ['v*'] for tagged releases
+#   workflow_dispatch:           # allows manual trigger
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0       # needed for git describe if using tags/SHA
+
+      - uses: azure/setup-helm@v4
+
+      - name: Package chart
+        run: |
+          CHART_DIR=charts/my-app     # ← adjust to your chart location
+          VERSION=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0-dev")-$(git rev-parse --short HEAD)
+          helm package $CHART_DIR --version $VERSION --app-version $VERSION
+          ls -l *.tgz
+
+      - name: Checkout central gh-pages
+        uses: actions/checkout@v4
+        with:
+          repository: schnabel45/helm-charts
+          token: ${{ secrets.CENTRAL_PAT }}
+          ref: gh-pages
+          path: central
+
+      - name: Copy & clean old versions (optional)
+        run: |
+          mv *.tgz central/
+          cd central
+          # Optional: keep only latest 3 versions per chart to save space
+          ls -1 my-app-*.tgz | sort -rV | tail -n +4 | xargs rm -f || true
+
+      - name: Commit to central
+        run: |
+          cd central
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add *.tgz
+          git commit -m "Add/update chart my-app from source repo" || echo "No change"
+          git push origin gh-pages
