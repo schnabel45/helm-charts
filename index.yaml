@@ -2,8 +2,25 @@ apiVersion: v1
 entries:
   termix:
   - apiVersion: v2
+    appVersion: 1.11.4
+    created: "2026-02-21T19:51:43.409174679Z"
+    description: A Helm chart for deploying Termix terminal sharing application
+    digest: 9dcdff6805a81ae0e41d557229722860a9c393c5a6f95979f99f38f5b76399ad
+    keywords:
+    - termix
+    - terminal
+    - sharing
+    maintainers:
+    - email: donotspam@me.com
+      name: Eric Schnabel
+    name: termix
+    type: application
+    urls:
+    - https://schnabel45.github.io/helm-charts/termix-1.11.4.tgz
+    version: 1.11.4
+  - apiVersion: v2
     appVersion: 1.11.3
-    created: "2026-02-21T19:45:45.620967988Z"
+    created: "2026-02-21T19:51:43.408857085Z"
     description: A Helm chart for deploying Termix terminal sharing application
     digest: 6c6916e35b467db68453da5f7c2b4cd587d57571fe4e351951c3f24acf2eaa1c
     keywords:
@@ -20,7 +37,7 @@ entries:
     version: 1.11.3
   - apiVersion: v2
     appVersion: 1.11.2
-    created: "2026-02-21T19:45:45.620606113Z"
+    created: "2026-02-21T19:51:43.408505458Z"
     description: A Helm chart for deploying Termix terminal sharing application
     digest: 12591755b0b3330566f5a1162b7a54dc11e331c834619754fd4865cf994b9e4d
     keywords:
@@ -37,7 +54,7 @@ entries:
     version: 1.11.2
   - apiVersion: v2
     appVersion: 1.11.1
-    created: "2026-02-21T19:45:45.620210485Z"
+    created: "2026-02-21T19:51:43.408122762Z"
     description: A Helm chart for deploying Termix terminal sharing application
     digest: 4109e3b1c7ba89dce3d159f164662be26d874395f5a7761852f3c37e4f7c6803
     keywords:
@@ -54,7 +71,7 @@ entries:
     version: 1.11.1
   - apiVersion: v2
     appVersion: 1.11.0
-    created: "2026-02-21T19:45:45.619833913Z"
+    created: "2026-02-21T19:51:43.407754174Z"
     description: A Helm chart for deploying Termix terminal sharing application
     digest: 094119a9f9a57286860e8134278c2ff134aa5a884faf57a47f03c2d48aada9a3
     keywords:
@@ -69,4 +86,4 @@ entries:
     urls:
     - https://schnabel45.github.io/helm-charts/termix-1.11.0.tgz
     version: 1.11.0
-generated: "2026-02-21T19:45:45.619273752Z"
+generated: "2026-02-21T19:51:43.407213313Z"
