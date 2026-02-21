@@ -2,8 +2,25 @@ apiVersion: v1
 entries:
   termix:
   - apiVersion: v2
+    appVersion: 1.11.1
+    created: "2026-02-21T19:30:23.917119737Z"
+    description: A Helm chart for deploying Termix terminal sharing application
+    digest: 4109e3b1c7ba89dce3d159f164662be26d874395f5a7761852f3c37e4f7c6803
+    keywords:
+    - termix
+    - terminal
+    - sharing
+    maintainers:
+    - email: donotspam@me.com
+      name: Eric Schnabel
+    name: termix
+    type: application
+    urls:
+    - https://schnabel45.github.io/helm-charts/termix-1.11.1.tgz
+    version: 1.11.1
+  - apiVersion: v2
     appVersion: 1.11.0
-    created: "2026-02-21T19:25:07.447219865Z"
+    created: "2026-02-21T19:30:23.916720485Z"
     description: A Helm chart for deploying Termix terminal sharing application
     digest: 094119a9f9a57286860e8134278c2ff134aa5a884faf57a47f03c2d48aada9a3
     keywords:
@@ -18,4 +35,4 @@ entries:
     urls:
     - https://schnabel45.github.io/helm-charts/termix-1.11.0.tgz
     version: 1.11.0
-generated: "2026-02-21T19:25:07.446637789Z"
+generated: "2026-02-21T19:30:23.916153214Z"
