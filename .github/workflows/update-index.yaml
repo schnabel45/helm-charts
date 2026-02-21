@@ -27,9 +27,21 @@ jobs:
         with:
           version: 'v3.14.0'  # Use latest stable version
 
+      - name: Debug filesystem
+        run: |
+          pwd
+          ls -lah
+          more index.yaml || echo "No existing index.yaml found"
+
       - name: Index charts
         run: |
           helm repo index . --url https://schnabel45.github.io/helm-charts/
+
+      - name: Debug filesystem
+        run: |
+          pwd
+          ls -lah
+          more index.yaml || echo "No existing index.yaml found"
 
       - name: Commit and Push Updated Index
         run: |
