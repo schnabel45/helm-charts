@@ -1,0 +1,30 @@
+name: Update Helm Index
+
+on:
+  push:
+    branches: [gh-pages]
+    paths:
+      - '**.tgz'
+
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+      - name: Install Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: 'v3.14.0'  # Use latest stable version
+      - name: Update Index
+        run: |
+          helm repo index . --url https://schnabel45.github.io/helm-charts/
+      - name: Commit and Push Updated Index
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add index.yaml
+          git commit -m "Update index.yaml with new chart" || echo "No changes to commit"
+          git push
