@@ -3,7 +3,27 @@ entries:
   mealie:
   - apiVersion: v2
     appVersion: v3.23.1
-    created: "2026-08-19T03:57:05.260070244Z"
+    created: "2026-08-19T04:11:36.128638099Z"
+    dependencies:
+    - name: common
+      repository: https://bjw-s-labs.github.io/helm-charts/
+      version: 4.5.0
+    description: Mealie is a self hosted recipe manager and meal planner with a RestAPI
+      backend and a reactive frontend application built in Vue for a pleasant user
+      experience for the whole family.
+    digest: afc7e7945f11bd8a6cfe4f981b907585804a4f9444cf643e85b2e7e0100d8ff8
+    keywords:
+    - mealie
+    kubeVersion: '>=1.16.0-0'
+    name: mealie
+    sources:
+    - https://github.com/mealie-recipes/mealie
+    urls:
+    - https://schnabel45.github.io/helm-charts/mealie-4.1.2.tgz
+    version: 4.1.2
+  - apiVersion: v2
+    appVersion: v3.23.1
+    created: "2026-08-19T04:11:36.124044878Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts/
@@ -23,7 +43,7 @@ entries:
     version: 4.1.1
   - apiVersion: v2
     appVersion: v3.23.1
-    created: "2026-08-19T03:57:05.256076973Z"
+    created: "2026-08-19T04:11:36.120103734Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts/
@@ -43,7 +63,7 @@ entries:
     version: 4.1.0
   - apiVersion: v2
     appVersion: v3.11.0
-    created: "2026-08-19T03:57:05.251344481Z"
+    created: "2026-08-19T04:11:36.115462923Z"
     dependencies:
     - name: common
       repository: https://bjw-s-labs.github.io/helm-charts/
@@ -64,7 +84,7 @@ entries:
   termix:
   - apiVersion: v2
     appVersion: release-1.11.1
-    created: "2026-08-19T03:57:05.262933835Z"
+    created: "2026-08-19T04:11:36.130817176Z"
     description: A Helm chart for deploying Termix terminal sharing application
     digest: 42faf65f3e9dd3d833f1c2a0b5f1d076a30749e547a8d92d6c4797dcf429fb03
     keywords:
@@ -81,7 +101,7 @@ entries:
     version: 1.11.5
   - apiVersion: v2
     appVersion: 1.11.4
-    created: "2026-08-19T03:57:05.262598825Z"
+    created: "2026-08-19T04:11:36.130447466Z"
     description: A Helm chart for deploying Termix terminal sharing application
     digest: 9dcdff6805a81ae0e41d557229722860a9c393c5a6f95979f99f38f5b76399ad
     keywords:
@@ -98,7 +118,7 @@ entries:
     version: 1.11.4
   - apiVersion: v2
     appVersion: 1.11.3
-    created: "2026-08-19T03:57:05.262246618Z"
+    created: "2026-08-19T04:11:36.130099867Z"
     description: A Helm chart for deploying Termix terminal sharing application
     digest: 6c6916e35b467db68453da5f7c2b4cd587d57571fe4e351951c3f24acf2eaa1c
     keywords:
@@ -115,7 +135,7 @@ entries:
     version: 1.11.3
   - apiVersion: v2
     appVersion: 1.11.2
-    created: "2026-08-19T03:57:05.261597157Z"
+    created: "2026-08-19T04:11:36.129751177Z"
     description: A Helm chart for deploying Termix terminal sharing application
     digest: 12591755b0b3330566f5a1162b7a54dc11e331c834619754fd4865cf994b9e4d
     keywords:
@@ -132,7 +152,7 @@ entries:
     version: 1.11.2
   - apiVersion: v2
     appVersion: 1.11.1
-    created: "2026-08-19T03:57:05.260806615Z"
+    created: "2026-08-19T04:11:36.129376507Z"
     description: A Helm chart for deploying Termix terminal sharing application
     digest: 4109e3b1c7ba89dce3d159f164662be26d874395f5a7761852f3c37e4f7c6803
     keywords:
@@ -149,7 +169,7 @@ entries:
     version: 1.11.1
   - apiVersion: v2
     appVersion: 1.11.0
-    created: "2026-08-19T03:57:05.260468509Z"
+    created: "2026-08-19T04:11:36.129013149Z"
     description: A Helm chart for deploying Termix terminal sharing application
     digest: 094119a9f9a57286860e8134278c2ff134aa5a884faf57a47f03c2d48aada9a3
     keywords:
@@ -164,4 +184,4 @@ entries:
     urls:
     - https://schnabel45.github.io/helm-charts/termix-1.11.0.tgz
     version: 1.11.0
-generated: "2026-08-19T03:57:05.24668956Z"
+generated: "2026-08-19T04:11:36.110757976Z"
